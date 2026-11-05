@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chris.AI — Writing insights</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17243b;
+      --muted: #64718a;
+      --blue: #4358e8;
+      --line: #e3e8f1;
+      --paper: #ffffff;
+      --background: #f5f7fc;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px max(6vw, 24px);
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--ink);
+      font-size: 20px;
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border-radius: 11px;
+      background: var(--blue);
+      color: white;
+      font-weight: 800;
+    }
+
+    nav a {
+      margin-left: 26px;
+      color: var(--muted);
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    main {
+      width: min(920px, 90%);
+      margin: 0 auto;
+      padding: 76px 0 90px;
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 13px;
+      border: 1px solid #dce2ff;
+      border-radius: 30px;
+      background: #eef0ff;
+      color: #394bd0;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    h1 {
+      margin: 20px 0 14px;
+      font-size: clamp(36px, 6vw, 58px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+    }
+
+    .intro p {
+      margin: 0 auto;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .checker {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+      box-shadow: 0 16px 45px #23375b10;
+    }
+
+    .checker h2 {
+      margin: 0 0 8px;
+      font-size: 21px;
+    }
+
+    .hint {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    textarea {
+      display: block;
+      width: 100%;
+      min-height: 220px;
+      resize: vertical;
+      padding: 17px;
+      border: 1px solid #d6ddea;
+      border-radius: 12px;
+      color: var(--ink);
+      font: inherit;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    textarea:focus {
+      outline: 3px solid #4358e826;
+      border-color: var(--blue);
+    }
+
+    .form-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    #counts {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    button {
+      padding: 13px 20px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--blue);
+      color: white;
+      cursor: pointer;
+      font: inherit;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    button:hover { background: #3347d4; }
+
+    #message {
+      margin-top: 18px;
+      padding: 17px;
+      border: 1px solid #dce2ff;
+      border-radius: 12px;
+      background: #f3f4ff;
+      color: #334078;
+      line-height: 1.6;
+    }
+
+    #message[hidden] { display: none; }
+
+    .how {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 58px;
+    }
+
+    .feature {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--paper);
+    }
+
+    .feature h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    footer {
+      padding: 22px;
+      border-top: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 650px) {
+      header { padding: 17px 5%; }
+      nav a { margin-left: 12px; font-size: 13px; }
+      main { padding-top: 52px; }
+      .checker { padding: 20px; }
+      .how { grid-template-columns: 1fr; }
+      .form-bottom { align-items: flex-start; flex-direction: column; }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="#">
+      <span class="brand-mark">C</span>
+      <span>Chris.AI</span>
+    </a>
+    <nav>
+      <a href="#how-it-works">How it works</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <span class="badge">A transparent writing checker · In development</span>
+      <h1>Understand the signals behind a piece of writing.</h1>
+      <p>
+        Explore a clearer way to review writing, with detailed explanations
+        designed to help you think carefully about the result.
+      </p>
+    </section>
+
+    <section class="checker" aria-labelledby="checker-title">
+      <h2 id="checker-title">Try the checker</h2>
+      <p class="hint">Paste some text below. Your text stays in this page demo.</p>
+
+      <form id="checker-form">
+        <textarea id="text-input" placeholder="Paste your text here..."></textarea>
+        <div class="form-bottom">
+          <span id="counts">0 words · 0 characters</span>
+          <button type="submit">Analyze text</button>
+        </div>
+      </form>
+
+      <div id="message" role="status" aria-live="polite" hidden></div>
+    </section>
+
+    <section class="how" id="how-it-works" aria-label="About the checker">
+      <article class="feature">
+        <h3>Sentence-level detail</h3>
+        <p>The planned checker will explain which parts of a passage deserve a closer look.</p>
+      </article>
+      <article class="feature">
+        <h3>Clear explanations</h3>
+        <p>Results should show why a signal appeared, in language that is easy to understand.</p>
+      </article>
+      <article class="feature">
+        <h3>Use judgment</h3>
+        <p>AI detection can be wrong. A score should never be treated as proof of who wrote something.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    Chris.AI is a work in progress. This demo does not perform AI detection.
+  </footer>
+
+  <script>
+    const textInput = document.querySelector("#text-input");
+    const counts = document.querySelector("#counts");
+    const message = document.querySelector("#message");
+    const form = document.querySelector("#checker-form");
+
+    function updateCounts() {
+      const text = textInput.value.trim();
+      const words = text ? text.split(/\s+/).length : 0;
+      counts.textContent = `${words} words · ${textInput.value.length} characters`;
+    }
+
+    textInput.addEventListener("input", updateCounts);
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (!textInput.value.trim()) {
+        message.textContent = "Paste some text into the box first, then try again.";
+      } else {
+        message.textContent =
+          "Thanks for trying the demo. The page is working, but real AI analysis is not connected yet, so it cannot tell whether this text was written by AI or a person.";
+      }
+
+      message.hidden = false;
+    });
+  </script>
+</body>
+</html>
